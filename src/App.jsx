@@ -1,22 +1,23 @@
 /*Todo archivo en react va en mayuscula*/
+
 import './App.css';
+import Header from './components/header';
+import Footer from './components/footer';
+import Tarjeta from './components/Tarjeta';
 
 function App(){
-  const items =['React','Node','Javascript']
-
-  return(
-        <section>
-        <div>Hola Mundo</div>
-        <ul>
-            {
-                items.map((item, index)=>(
-                    <li key={index}>{item}</li>
-                ))
-            }
-        </ul>
-    </section>
-  );
-}
+    return(
+        <div>
+            <Header /> 
+            <main>
+                <Tarjeta />
+                <Tarjeta />
+                <Tarjeta />
+            </main>
+            <Footer />
+        </div>
+    )
+};
 
 export default App;
 /*Estas tres lineas simepre deben estar*/
