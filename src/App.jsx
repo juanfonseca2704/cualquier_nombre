@@ -1,21 +1,24 @@
 /*Todo archivo en react va en mayuscula*/
 
 import './App.css';
-import Header from './components/header';
-import Footer from './components/footer';
-import Tarjeta from './components/Tarjeta';
+import DashboardLayout from './layouts/DashboardLayout';
+import { Routes, Route } from 'react-router-dom';
+import PanelGeneral from './pages/PanelGeneral';
+import Configuracion from './pages/Configuracion';
+import Productos from './pages/Productos';
+import NotFound from './pages/NotFound';
+
 
 function App(){
     return(
-        <div>
-            <Header /> 
-            <main>
-                <Tarjeta />
-                <Tarjeta />
-                <Tarjeta />
-            </main>
-            <Footer />
-        </div>
+        <Routes>
+            <Route path="/" element={<DashboardLayout/>}>
+                <Route index element={<PanelGeneral/>}/>
+                <Route path="productos" element={<Productos/>}/>
+                <Route path="configuracion" element={<Configuracion/>}/>
+            </Route>
+            <Route path="*" element={<NotFound/>}/>
+        </Routes>
     )
 };
 
